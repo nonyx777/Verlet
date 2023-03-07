@@ -4,17 +4,24 @@
 
 class Ball : public Particle{
     private:
+        //window border parameters
         float height = 360.f;
         float width = 640.f;
 
     public:
         sf::CircleShape particle_property;
-        sf::Vector2f last_position = sf::Vector2f(-0.5f, -0.5f);
+        sf::Vector2f last_position;
+        //node properties
+        bool pinned;
+        bool selected;
 
         //movement variables
     public:
         Ball(){
-            this->acceleration = sf::Vector2f(0.f, 0.1f);
+        }
+        Ball(sf::Vector2f initial_last_position){
+            this->last_position = initial_last_position;
+            this->acceleration = sf::Vector2f(0.f, .5f);
         }
 
         //collidion resolver
@@ -37,13 +44,27 @@ class Ball : public Particle{
             }
         }
 
-        void update(float dt){
-            this->collisionResolve();
-
+        void integrate(float dt){
+            if(this->pinned == true)
+                return;
+            
             this->position = this->particle_property.getPosition();
             this->velocity = this->position - this->last_position;
             this->particle_property.move(this->velocity + this->acceleration);
             this->last_position = this->position;
+        }
+
+        void update(float dt){
+            //color change based on selection state
+            if(this->selected == true)
+                this->particle_property.setFillColor(sf::Color::Red);
+            else
+                this->particle_property.setFillColor(sf::Color::White);
+            
+
+
+            this->collisionResolve();
+            this->integrate(dt);
         }
         void render(sf::RenderTarget* target){
             target->draw(this->particle_property);

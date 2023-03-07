@@ -34,7 +34,16 @@ void Engine::pollEvent(){
                 break;
             case sf::Event::KeyPressed:
                 if(this->event.key.code == sf::Keyboard::Q)
-                    this->verlet.createBall();
+                    this->verlet.createBall(this->mouse_position_view);
+                if(this->event.key.code == sf::Keyboard::E)
+                    this->verlet.controlBall(this->mouse_position_view);
+                break;
+            case sf::Event::MouseButtonPressed:
+                if(this->event.mouseButton.button == sf::Mouse::Left)
+                    this->verlet.selection(this->mouse_position_view);
+                if(this->event.mouseButton.button == sf::Mouse::Right)
+                    this->verlet.pinning(this->mouse_position_view);
+                break;
         }
     }
 }

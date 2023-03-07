@@ -231,6 +231,15 @@ SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
 //Value Computed by CMake
+chainQ_BINARY_DIR:STATIC=/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet/build
+
+//Value Computed by CMake
+chainQ_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+chainQ_SOURCE_DIR:STATIC=/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet
+
+//Value Computed by CMake
 verlet_BINARY_DIR:STATIC=/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet/build
 
 //Value Computed by CMake

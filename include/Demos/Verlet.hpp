@@ -18,20 +18,23 @@ class Verlet{
         sf::Vector2f ball2_position;
 
         //attachment related variables
-        float length = 50.f;
-        float length_for_four = 70.f;
+        float length = 20.f;
+        float length_for_four = 40.f;
         Line tail;
 
     public:
         Verlet();
 
         //custom function
-        void createBall();
+        void createBall(sf::Vector2f mouse_position);
         void createLine();
         void lineAlign();
         void resolveCaller();
         void distanceResolver(Ball ball1, Ball ball2);
         void distanceResolverForFour(Ball ball1, Ball ball2);
+        void selection(sf::Vector2f mouse_position);
+        void pinning(sf::Vector2f mouse_position);
+        void controlBall(sf::Vector2f mouse_position);
 
         //integrator and displayer
         void update(float dt);
