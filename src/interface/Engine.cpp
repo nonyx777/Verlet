@@ -37,6 +37,8 @@ void Engine::pollEvent(){
                     this->verlet.createBall(this->mouse_position_view);
                 if(this->event.key.code == sf::Keyboard::E)
                     this->verlet.controlBall(this->mouse_position_view);
+                if(this->event.key.code == sf::Keyboard::W)
+                    this->verlet.shootProjectiles(this->mouse_position_view);
                 break;
             case sf::Event::MouseButtonPressed:
                 if(this->event.mouseButton.button == sf::Mouse::Left)

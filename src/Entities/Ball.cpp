@@ -58,7 +58,7 @@ class Ball : public Particle{
             //color change based on selection state
             if(this->selected == true)
                 this->particle_property.setFillColor(sf::Color::Red);
-            else
+            else if(this->selected == false)
                 this->particle_property.setFillColor(sf::Color::White);
             
 

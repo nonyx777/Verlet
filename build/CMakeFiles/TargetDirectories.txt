@@ -1,3 +1,0 @@
-/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet/build/CMakeFiles/verlet.dir
-/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet/build/CMakeFiles/edit_cache.dir
-/home/nonyx/Desktop/scripts/C++/personal/WhatEverComesToMind/Verlet/build/CMakeFiles/rebuild_cache.dir
