@@ -45,13 +45,17 @@ class Ball : public Particle{
         }
 
         void integrate(float dt){
-            if(this->pinned == true)
+            if(this->pinned == true){
+                this->last_position = this->particle_property.getPosition();
                 return;
+            }
             
             this->position = this->particle_property.getPosition();
             this->velocity = this->position - this->last_position;
             this->particle_property.move(this->velocity + this->acceleration);
             this->last_position = this->position;
+
+            //....
         }
 
         void update(float dt){
