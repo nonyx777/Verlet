@@ -54,8 +54,6 @@ class Ball : public Particle{
             this->velocity = this->position - this->last_position;
             this->particle_property.move(this->velocity + this->acceleration);
             this->last_position = this->position;
-
-            //....
         }
 
         void update(float dt){
