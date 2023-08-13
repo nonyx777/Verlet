@@ -5,8 +5,8 @@ void Engine::initVariables(){
     this->window = nullptr;
 }
 void Engine::initWindow(){
-    this->video_mode.width = 640;
-    this->video_mode.height = 360;
+    this->video_mode.width = 900;
+    this->video_mode.height = 700;
     this->window = new sf::RenderWindow(this->video_mode, "Verlet", sf::Style::Titlebar | sf::Style::Resize | sf::Style::Close);
     this->window->setFramerateLimit(60);
 }

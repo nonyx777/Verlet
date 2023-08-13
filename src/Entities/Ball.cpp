@@ -5,8 +5,8 @@
 class Ball : public Particle{
     private:
         //window border parameters
-        float height = 360.f;
-        float width = 640.f;
+        float height = 700.f;
+        float width = 900.f;
 
     public:
         sf::CircleShape particle_property;
