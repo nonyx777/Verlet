@@ -9,8 +9,6 @@
 
 class Verlet{
     private:
-        //ball container
-        std::vector<Ball> balls;
         //line(stick) container
         std::vector<Line> lines;
         //projectile container
@@ -27,7 +25,9 @@ class Verlet{
 
         // instantiating objects
         CollisionDetectionOperation cod;
-
+    public:
+        //ball container
+        std::vector<Ball> balls;
     public:
         Verlet();
 

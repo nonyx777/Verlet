@@ -102,7 +102,7 @@ void Verlet::selection(sf::Vector2f mouse_position){
 void Verlet::pinning(sf::Vector2f mouse_position){
     for(Ball &ball : this->balls){
         if(ball.selected)
-            ball.pinned = ball.pinned == true ? false : true;
+            ball.pinned = !ball.pinned;
     }
 }
 void Verlet::controlBall(sf::Vector2f mouse_position){

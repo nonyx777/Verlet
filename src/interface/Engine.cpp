@@ -33,8 +33,15 @@ void Engine::pollEvent(){
                 this->window->close();
                 break;
             case sf::Event::KeyPressed:
-                if(this->event.key.code == sf::Keyboard::Q)
-                    this->verlet.createBall(this->mouse_position_view);
+                if(this->event.key.code == sf::Keyboard::Q){
+                    if(this->verlet.balls.size() < 1){
+                        this->verlet.createBall(this->mouse_position_view);
+                        this->verlet.balls[0].pinned = true;
+                        this->verlet.balls[0].selected = true;
+                    }
+                    else
+                        this->verlet.createBall(this->mouse_position_view);
+                }
                 if(this->event.key.code == sf::Keyboard::E)
                     this->verlet.controlBall(this->mouse_position_view);
                 if(this->event.key.code == sf::Keyboard::W)
